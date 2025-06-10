@@ -6,22 +6,18 @@ import importantPdf from "./assets/Important file document.pdf";
 import PhotoManager from "./PhotoManager";
 
 function Scanner() {
-   const fileInputRef = useRef(null);
-   const photoInputRef = useRef(null);
    const [modalData, setModalData] = useState(null); // { imageUrl, message, object }
-   const [correctPhotos, setCorrectPhotos] = useState([]);
-   const [incorrectPhotos, setIncorrectPhotos] = useState([]);
    const webcamRef = useRef(null);
    const [facingMode, setFacingMode] = useState("environment");
    const [isLoading, setIsLoading] = useState(false);
 
-   const readFileAsDataURL = (file) =>
-      new Promise((resolve, reject) => {
-         const reader = new FileReader();
-         reader.onload = () => resolve(reader.result);
-         reader.onerror = reject;
-         reader.readAsDataURL(file);
-      });
+//    const readFileAsDataURL = (file) =>
+//       new Promise((resolve, reject) => {
+//          const reader = new FileReader();
+//          reader.onload = () => resolve(reader.result);
+//          reader.onerror = reject;
+//          reader.readAsDataURL(file);
+//       });
 
    const capture = async () => {
       setIsLoading(true); // 👈 Start loading
@@ -74,9 +70,9 @@ function Scanner() {
          const message = resultData.message || "No message provided.";
          const object = resultData.object || "None";
 
-         const uploadedImageUrl = await readFileAsDataURL(file);
+         //const uploadedImageUrl = await readFileAsDataURL(file);
 
-         setIncorrectPhotos((prev) => [...prev, uploadedImageUrl]);
+         //setIncorrectPhotos((prev) => [...prev, uploadedImageUrl]);
 
          setModalData({
             type: resnetData.prediction,
@@ -280,6 +276,7 @@ function OperationsPage({ onNavigateToScan }) {
 
          const uploadedImageUrl = await readFileAsDataURL(file);
 
+         setCorrectPhotos((prev) => [...prev, uploadedImageUrl]);
          setIncorrectPhotos((prev) => [...prev, uploadedImageUrl]);
 
          setModalData({

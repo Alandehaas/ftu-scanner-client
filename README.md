@@ -19,11 +19,6 @@
 3. Run the app  
    `npm start`
 
-## Usage
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the app in action.
-
-
 
 
 

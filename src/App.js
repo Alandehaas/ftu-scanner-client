@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import ScanPage from "./components/ScanPage";
 import OperationsPage from "./components/OperationsPage";
@@ -9,6 +9,14 @@ export default function App() {
    const [page, setPage] = useState("operations");
    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+   useEffect(() => {
+      const storedLogin = localStorage.getItem("isLoggedIn");
+      if (storedLogin === "true") {
+         setIsLoggedIn(true);
+      }
+   }, []);
+
+
    const handleLogin = () => {
       setIsLoggedIn(true);
       setPage("operations");
@@ -16,6 +24,7 @@ export default function App() {
 
    const handleLogout = () => {
       setIsLoggedIn(false);
+      localStorage.removeItem("isLoggedIn");
       setPage("login");
    };
 

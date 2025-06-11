@@ -12,19 +12,38 @@ export default function Login({ onLogin }) {
 
    const validateEmail = (email) => /^\S+@\S+\.\S+$/.test(email);
 
-   const handleSubmit = (e) => {
+   const handleSubmit = async (e) => {
       e.preventDefault();
+
       if (!validateEmail(email)) {
          setError("Please enter a valid email address");
          return;
       }
+
       if (password.length === 0) {
          setError("Please enter your password");
          return;
       }
-      setError("");
-      onLogin();
+
+      // Simulated "backend" auth check
+      const mockUser = {
+         email: "admin@kpn.com",
+         password: "welkomkpn2025"
+      };
+
+      if (email === mockUser.email && password === mockUser.password) {
+         setError("");
+         if (rememberMe) {
+            localStorage.setItem("isLoggedIn", "true");
+         }
+         onLogin(); // continue to app
+      } else {
+         setError("Invalid email or password");
+      }
    };
+
+
+
 
    const handleResetSubmit = (e) => {
       e.preventDefault();

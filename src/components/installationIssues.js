@@ -1,39 +1,39 @@
 export const installation_issues = {
   "FTU": [
-    "- Not mounted upright (e.g., upside down or sideways)",
-    "- Positioned too close to walls or other objects; insufficient spacing for ventilation or cable management",
-    "- Cover is missing or not properly closed",
-    "- FTU is not securely attached (e.g., hanging loosely)",
-    "- Blocking access to other components (like energy meter)",
-    "- Cables (inside parts) sticking out of the FTU"
+    "Mounted upright (not upside down or sideways)",
+    "Positioned with sufficient spacing from walls or other objects for proper ventilation and cable management",
+    "Cover is present and properly closed",
+    "FTU is securely attached and stable",
+    "Access to other components (like energy meter) remains unobstructed",
+    "Cables inside the FTU are properly contained and not protruding"
   ],
   "Sticker": [
-    "- Missing mandatory compliance sticker",
-    "- Sticker placed on the wrong part of the FTU or cabinet",
-    "- Sticker not placed vertical",
-    "- Sticker damaged or illegible (blurry, scratched, worn out)",
-    "- Old or wrong type of sticker used"
+    "Mandatory compliance sticker is present",
+    "Sticker is placed on the correct part of the FTU or cabinet",
+    "Sticker is placed vertically",
+    "Sticker is clear and legible (not blurry, scratched, or worn out)",
+    "Correct and up-to-date sticker is used"
   ],
   "Cable": [
-    "- Cables not plugged into the FTU correctly (e.g., loosely inserted or bent)",
-    "- Excessive cable slack or loops not managed (trip hazard or visual clutter)",
-    "- Cable routing is incorrect (e.g. across heating element or sharp angles)",
-    "- Unshielded cable exposure or frayed ends visible",
-    "- Cable bent too much"
+    "Cables are plugged into the FTU correctly and securely",
+    "Cable slack and loops are managed to avoid hazards and clutter",
+    "Cable routing avoids heating elements and sharp angles",
+    "Cables are shielded with no visible fraying or exposed ends",
+    "Cables are not excessively bent"
   ],
   "Screw": [
-    "- Screws missing",
-    "- FTU is held in place with the wrong type or size of screw",
-    "- Unused screws left loose in cabinet (safety hazard)",
-    "- Screw too close to FTU"
+    "All required screws are present",
+    "FTU is secured with the correct type and size of screw",
+    "No loose or unused screws are left inside the cabinet",
+    "Screws are positioned at a safe distance from the FTU"
   ],
   "Energy Box": [
-    "- FTU installed too close to the energy meter",
-    "- Energy box is blocking access to FTU or vice versa"
+    "FTU is installed at a safe distance from the energy meter",
+    "FTU and energy box are both easily accessible and not obstructing each other"
   ],
   "Heating Element": [
-    "- FTU placed next to or directly above/below a heating source",
-    "- Cable routed across or near a heating component",
-    "- Risk of overheating FTU due to poor environmental consideration"
+    "FTU is installed away from any heating sources",
+    "Cables are routed away from heating components",
+    "Installation considers heat exposure to prevent FTU overheating"
   ]
 }

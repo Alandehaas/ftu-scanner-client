@@ -62,7 +62,7 @@ export default function ResultModal({ modalData, onClose }) {
 
                {modalData.type === "correct" && (
                   <p className="text-sm text-gray-500 italic mb-4">
-                     Below are the details of when it is incorrectly installed.
+                     {isCorrect ? "The model has validated one or more of the following PvE criteria (see highlighted pixels in the image below)" : "The model could not validate one or more of the following PvE criteria (see highlighted pixels in the image below):"}
                   </p>
                )}
 

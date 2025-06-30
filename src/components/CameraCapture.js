@@ -28,21 +28,21 @@ export default function CameraCapture({ onCaptureComplete }) {
          const formData = new FormData();
          formData.append("file", file);
 
-         const resnetResponse = await fetch("https://ftuscannerwebapp-gxabbbbcdfcke6d8.westeurope-01.azurewebsites.net/resnet50?return_image=false", {
+         const resnetResponse = await fetch("http://127.0.0.1:5000/resnet50?return_image=false", {
             method: "POST",
             body: formData,
          });
          const resnetData = await resnetResponse.json();
          const classification = resnetData.prediction;
 
-         const fusedResponse = await fetch("https://ftuscannerwebapp-gxabbbbcdfcke6d8.westeurope-01.azurewebsites.net/fused?return_image=true", {
+         const fusedResponse = await fetch("http://127.0.0.1:5000/fused?return_image=true", {
             method: "POST",
             body: formData,
          });
          const fusedBlob = await fusedResponse.blob();
          const fusedImageURL = URL.createObjectURL(fusedBlob);
 
-         const resultResponse = await fetch("https://ftuscannerwebapp-gxabbbbcdfcke6d8.westeurope-01.azurewebsites.net/result", {
+         const resultResponse = await fetch("http://127.0.0.1:5000/result", {
             method: "POST",
             body: formData,
          });
